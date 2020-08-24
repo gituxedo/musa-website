@@ -1,0 +1,13 @@
+index.html
+academic.html
+monday.html
+ncumc.html
+teaching_award.html
+outeach.html
+bump.html
+diversity.html
+professional.html
+exposition.html
+office.html
+officers.html
+problems.html

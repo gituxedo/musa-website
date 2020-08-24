@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Mathematics Undergraduate Student Association</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/musa.css">
+  <link rel="stylesheet" href="css/Dropdown.css">
+
+  <!-- Forgive me coding gods for I have sinned -->
+  <style>
+    table, th, td {
+      /* width: 100%; */
+      padding: 15px;
+      /* border: 1px solid black; */
+      border-collapse: collapse;
+      margin: auto;
+      table-layout: fixed;
+    }
+    tr {
+      border-bottom: 2px dotted;
+    }
+    .col-1, .col-3 {
+      text-align: right;
+    }
+    .col-3 {
+      border-left: 2px dotted;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/Dropdown.js"></script>
+
+<!--  <iframe src="sidebar.html" id="nav"></iframe>-->
+
+  <ul class="dropdown" id="nav">
+     <li><a href="index.html">About</a>
+     <ul>
+       <li><a href="friends.html">Friends</a></li>
+       <li><a href="office.html">Office Hours</a></li>
+       <li><a href="officers.html">Officers</a></li>
+     </ul>
+   </li>
+     <li><a href="academic.html">Academic</a>
+       <ul>
+         <li><a href="monday.html">Math Mondays</a></li>
+         <li><a href="ncumc.html">Conferences</a></li>
+         <li><a href="teaching_award.html">Teaching Award</a></li>
+         <li><a href="exposition.html">Exposition</a></li>
+         <li><a href="problems.html">Problems</a></li>
+       </ul>
+     </li>
+     <li><a href="outreach.html">Outreach</a>
+       <ul>
+         <li><a href="bump.html">BUMP</a></li>
+       </ul>
+     </li>
+     <li><a href="diversity.html">Diversity</a>
+       <ul>
+         <li><a href="sperry.html">Sperry Lecture</a></li>
+       </ul>
+     </li>
+     <li><a href="professional.html">Professional</a></li>
+     <li><a href="social.html">Social</a></li>
+   </ul>
+<div id="container">
+  <!-- About Section -->
+<section id="office" class="content-section ">
+  <h1>Office Hours</h1>
+  <p>Our office is 938 Evans, between the courtyard and the back elevators. Come pay us a visit to buy food, sweaters, and other goodies, get information about upcoming events, use our coffee maker, microwave, <a href="library.html">library</a>, or printer, or just relax and chat about math and life!</p>
+  <img src="img/office.png" class="banner">
+  <h2>Hours</h2>
+  <p>We're open from 10 AM to 4 PM on weekdays. If you're looking for a particular officer, see our office hours below. To learn more about us, see our <a href="officers.html">list of officers</a>.</p>
+  <p>Some of our officers may be willing to answer questions about mathematics or certain courses. See their expertises on the officers page!</p>
+  <!--<table class="hours">
+  <tr><td></td><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td></tr>
+  {% for hour in site.hours %}
+  <tr>
+      <td>{{ hour.time }}</td>
+      <td>{{ hour.monday }}</td>
+      <td>{{ hour.tuesday }}</td>
+      <td>{{ hour.wednesday }}</td>
+      <td>{{ hour.thursday }}</td>
+      <td>{{ hour.friday }}</td>
+  </tr>
+  {% endfor %}
+</table>-->
+  <table width="75%">
+    <tr>
+      <th></th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+<!--     <tr>
+      <th>9:00 AM</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr> -->
+    <tr>
+      <th>10:00 AM</th>
+      <td>Karan Dhir</td>
+      <td>Katie Lamar</td>
+      <td>Army Patel</td>
+      <td>Mason Haberle</td>
+      <td>Lily Li</td>
+    </tr>
+    <tr>
+      <th>11:00 AM</th>
+      <td>Anthony George</td>
+      <td>Ning McKenzie</td>
+      <td>Andrew DeLapo (MUSA 74), Ning McKenzie</td>
+      <td>Andrew DeLapo</td>
+      <td>Tianchen Liu</td>
+    </tr>
+    <tr>
+      <th>12:00 PM</th>
+      <td>Roberto Velador</td>
+      <td>Tarang Srivastava</td>
+      <td>Roberto Velador</td>
+      <td>Andy Chen</td>
+      <td>Tianchen Liu</td>
+    </tr>
+    <tr>
+      <th>1:00 PM</th>
+      <td>Anthony Chen, Aidan Backus (MUSA 74)</td>
+      <td>Tarang Srivastava</td>
+      <td>Aidan Backus</td>
+      <td>Andy Chen</td>
+      <td>James Leng</td>
+    </tr>
+    <tr>
+      <th>2:00 PM</th>
+      <td>Sylvia Jin</td>
+      <td>Anthony Chen</td>
+      <td>Audrey Litvak</td>
+      <td>Bryce Goldman</td>
+      <td>Emily Huffman</td>
+    </tr>
+    <tr>
+      <th>3:00 PM</th>
+      <td>Austin Lei</td>
+      <td>Austin Lei</td>
+      <td>Sylvia Jin</td>
+      <td>Bryce Goldman</td>
+      <td>Mason Haberle</td>
+    </tr>
+<!--     <tr>
+      <th>4:00 PM</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr> -->
+  </table>
+
+  <br> <!-- This line of code is brought to you by Shinichi Mochizuki. -->
+  <h2>Food and Hoodies</h2>
+  <!-- thIs DoESnT WorK
+            <img src="/img/office-hours/Hoodie.jpg" style="float:right;width:300px;">
+  -->
+
+
+  <p>Snack prices are posted here and in the office. We accept Venmo (preferred), cash, and card.</p>
+  <p>We also sell Berkeley Mathematics t-shirts and hoodies, which come in navy blue and gray. Shirts are $15, and hoodies are $30.</p>
+
+  <div style="text-align: center">
+    <img src="img/merch/andrew_in_shirt.jpg" width="300px" style="margin: 30px">
+    <img src="img/merch/ning_anthony_sweatshirts.jpg" width="300px" style="margin: 30px">
+  </div>
+
+  </br> <!-- This line of code is brought to you by Shinichi Mochizuki. -->
+
+  <table width="75%">
+    <tr>
+      <th colspan="4">Freezer and Refrigerator</th>
+    </tr>
+    <tr>
+      <td class="col-1">Ice Cream Bars</td>
+      <td>$0.75</td>
+      <td class="col-3">Uncrustables</td>
+      <td>$1.00</td>
+    </tr>
+    <tr>
+      <td class="col-1">Hot Pocket</td>
+      <td>$1.00</td>
+      <td class="col-3">Burrito/Chimichanga</td>
+      <td>$1.25</td>
+    </tr>
+    <tr>
+      <td class="col-1">Tamales</td>
+      <td>$1.50</td>
+      <td class="col-3">Muffin</td>
+      <td>$1.00</td>
+    </tr>
+    <tr>
+      <td class="col-1">Applesauce</td>
+      <td>$0.75</td>
+      <td class="col-3"></td>
+      <td></td>
+    </tr>
+  </table>
+  <table width="75%">
+    <tr>
+      <th colspan="4">Beverages</th>
+    </tr>
+    <tr>
+      <td class="col-1">Sparkling Apple Juice</td>
+      <td>$1.25</td>
+      <td class="col-3">Capri Sun</td>
+      <td>$0.50</td>
+    </tr>
+    <tr>
+      <td class="col-1">Soda/Spindrift</td>
+      <td>$0.75</td>
+      <td class="col-3">Chocolate Milk</td>
+      <td>$1.00</td>
+    </tr>
+    <tr>
+      <td class="col-1">Coconut Water</td>
+      <td>$1.25</td>
+      <td class="col-3">Tea (Green or Black)</td>
+      <td>$0.25</td>
+    </tr>
+    <tr>
+      <td class="col-1">Coffee or Hot Chocolate (K-cup)</td>
+      <td>$1.00</td>
+      <td class="col-3"></td>
+      <td></td>
+    </tr>
+  </table>
+  <table width="75%">
+    <tr>
+      <th colspan="4">Snacks</th>
+    </tr>
+    <tr>
+      <td>Mac & Cheese</td>
+      <td>$1.25</td>
+      <td class="col-3">Cup Noodles</td>
+      <td>$0.50</td>
+    </tr>
+    <tr>
+      <td>Shin Ramen Cup</td>
+      <td>$1.75</td>
+      <td class="col-3">Trail Mix</td>
+      <td>$0.75</td>
+    </tr>
+    <tr>
+      <td>Soft & Chewy Bars</td>
+      <td>$0.25</td>
+      <td class="col-3">Ritz/Chips/Bites</td>
+      <td>$0.50</td>
+    </tr>
+    <tr>
+      <td><em>Classic</em> Chips/Cheeez-Its/Popcorn</td>
+      <td>$0.50</td>
+      <td class="col-3"><em>Flamin' Hot</em> Chips/Pringles</td>
+      <td>$0.75</td>
+    </tr>
+    <tr>
+      <td>Seaweed</td>
+      <td>$1.25</td>
+      <td class="col-3">Assorted Candies (Sour Patch, etc.)</td>
+      <td>$0.50 for 3</td>
+    </tr>
+    <tr>
+      <td>Fruit by the Foot</td>
+      <td>$0.50</td>
+      <td class="col-3">Milano Cookies</td>
+      <td>$0.50</td>
+    </tr>
+    <tr>
+      <td>Rice</td>
+      <td>$1.25</td>
+      <td class="col-3"></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <img src="img/snacks.jpg" class="banner">
+  <!--
+  <table class="food">
+  {% for food in site.food %}
+  <tr>
+  <td>{{ food.name }}</td>
+  <td>{{ food.price }}</td>
+  </tr>
+  {% endfor %}
+  </table>
+-->
+</section>
+  <!-- Footer -->
+<div style="clear:both;"></div>
+<footer>
+<p>
+MUSA is a Registered Student Organization acting independently of the
+University of California.
+We take full responsibility for our organization and this web site.</p>
+<p>Report problems with the site to the <a href="officers.html">Curator</a> or <a href="mailto:musa@math.berkeley.edu">contact us here</a>.</p>
+<p><br/>
+
+
+<p>&copy; MUSA 2019</p>
+<p>
+<a href="https://www.ocf.berkeley.edu">
+<img src="img/ocfbadge_mini8dark.png"
+ alt="Hosted by the OCF" style="border: 0;" />
+</a></p>
+
+</footer>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+</div>
+</body>
+
+</html>
