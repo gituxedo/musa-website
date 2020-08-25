@@ -26,9 +26,10 @@
   <!-- Add your site or application content here -->
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://unpkg.com/d3-dag@0.2.3/dist/d3-dag.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
   <script src="js/Dropdown.js"></script>
 
 <!--  <iframe src="sidebar.html" id="nav"></iframe>-->
@@ -80,6 +81,14 @@
   <h3>Undergraduate Course Map</h3>
   <p>Black arrows indicate the lower-division courses, and other colors are for upper-division courses. These include official prerequisites as well as recommended ones.</p>
   <img src="course_map_info/coursemapv1.png" alt='Course Map' class='banner'>
+  <h3>Interactive Undergraduate Course Map</h3>
+  <!-- <p>Coming soon: hover over a course to see a brief description!</p> -->
+  <!-- insert course map here -->
+  <script type=text/javascript src=doc/prereqs.json>
+    // const prereqs = require('doc/prereqs.json')
+    tree = d3.dagHierarchy(src)
+
+  </script>
   <h3>Graduate Course Map</h3>
   <p>Generously provided by u/Devilnaht on <a href="https://www.reddit.com/r/berkeley/comments/bm0w8o/berkeley_math_dependency_chart/">Reddit</a></p>
   <p>Disclaimer: these only include official prerequisites. Different professors may vary the content semester to semester and thus have different requirements.</p>
