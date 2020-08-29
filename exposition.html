@@ -86,7 +86,179 @@
   <!-- insert course map here -->
   <link rel="stylesheet" href="css/d3.css">
   <script src="https://d3js.org/d3.v5.js"></script>
-  <script src="js/coursemap.js"></script>
+  <script src="js/coursemap.js">
+    const width = 960;
+    const height = 500;
+    const colors = d3.scaleOrdinal(d3.schemeCategory10);
+
+    const svg = d3.select('body')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+    // set up initial nodes and links
+    //  - nodes are known by 'id', not by index in array.
+    const nodes = [
+            {"id": "104", "name": "104"},
+            {"id": "105", "name": "105"},
+            {"id": "110", "name": "110"},
+            {"id": "113", "name": "113"},
+            {"id": "114", "name": "114"},
+            {"id": "115", "name": "115"},
+            {"id": "116", "name": "116"},
+            {"id": "118", "name": "118"},
+            {"id": "123", "name": "123"},
+            {"id": "124", "name": "124"},
+            {"id": "125A", "name": "125A"},
+            {"id": "126", "name": "126"},
+            {"id": "127", "name": "127"},
+            {"id": "128A", "name": "128A"},
+            {"id": "128B", "name": "128B"},
+            {"id": "130", "name": "130"},
+            {"id": "135", "name": "135"},
+            {"id": "136", "name": "136"},
+            {"id": "140", "name": "140"},
+            {"id": "141", "name": "141"},
+            {"id": "142", "name": "142"},
+            {"id": "143", "name": "143"},
+            {"id": "151", "name": "151"},
+            {"id": "152", "name": "152"},
+            {"id": "153", "name": "153"},
+            {"id": "160", "name": "160"},
+            {"id": "170", "name": "170"},
+            {"id": "172", "name": "172"},
+            {"id": "185", "name": "185"},
+            {"id": "1A", "name": "1A"},
+            {"id": "1B", "name": "1B"},
+            {"id": "53", "name": "53"},
+            {"id": "54", "name": "54"},
+            {"id": "55", "name": "55"},
+            {"id": "C103", "name": "C103"},
+      ];
+    const links = [
+        {"source": "1A", "target": "1B"},
+        {"source": "1B", "target": "53"},
+        {"source": "1B", "target": "54"},
+        {"source": "1B", "target": "55"},
+        {"source": "53", "target": "104"},
+        {"source": "53", "target": "110"},
+        {"source": "53", "target": "113"},
+        {"source": "54", "target": "104"},
+        {"source": "54", "target": "110"},
+        {"source": "54", "target": "113"},
+        {"source": "55", "target": "104"},
+        {"source": "55", "target": "110"},
+        {"source": "55", "target": "113"},
+        {"source": "104", "target": "105"},
+        {"source": "110", "target": "105"},
+        {"source": "104", "target": "185"},
+        {"source": "104", "target": "C103"},
+        {"source": "113", "target": "114"},
+        {"source": "55", "target": "115"},
+        {"source": "110", "target": "116"},
+        {"source": "113", "target": "116"},
+        {"source": "115", "target": "116"},
+        {"source": "104", "target": "118"},
+        {"source": "110", "target": "118"},
+        {"source": "104", "target": "123"},
+        {"source": "110", "target": "123"},
+        {"source": "53", "target": "124"},
+        {"source": "54", "target": "124"},
+        {"source": "55", "target": "124"},
+        {"source": "104", "target": "126"},
+        {"source": "110", "target": "126"},
+        {"source": "53", "target": "127"},
+        {"source": "54", "target": "127"},
+        {"source": "55", "target": "127"},
+        {"source": "53", "target": "128A"},
+        {"source": "54", "target": "128A"},
+        {"source": "128A", "target": "128B"},
+        {"source": "110", "target": "130"},
+        {"source": "113", "target": "130"},
+        {"source": "104", "target": "125A"},
+        {"source": "110", "target": "125A"},
+        {"source": "113", "target": "125A"},
+        {"source": "125A", "target": "135"},
+        {"source": "125A", "target": "136"},
+        {"source": "104", "target": "140"},
+        {"source": "110", "target": "140"},
+        {"source": "104", "target": "141"},
+        {"source": "110", "target": "141"},
+        {"source": "104", "target": "142"},
+        {"source": "113", "target": "142"},
+        {"source": "104", "target": "143"},
+        {"source": "113", "target": "143"},
+        {"source": "53", "target": "151"},
+        {"source": "54", "target": "152"},
+        {"source": "113", "target": "152"},
+        {"source": "151", "target": "152"},
+        {"source": "151", "target": "153"},
+        {"source": "152", "target": "153"},
+        {"source": "104", "target": "160"},
+        {"source": "113", "target": "160"},
+        {"source": "104", "target": "170"},
+        {"source": "110", "target": "170"},
+        {"source": "113", "target": "172"}
+      ];
+
+
+    var simulation = d3.forceSimulation()
+                  .nodes(nodes);
+    simulation
+        .force("charge_force", d3.forceManyBody())
+        .force("center_force", d3.forceCenter(width / 2, height / 2));
+    //draw circles for the nodes 
+    var node = svg.append("g")
+          .attr("class", "nodes")
+          .selectAll(".node")
+          .data(nodes)
+          .enter()
+          .append("circle")
+          .attr("r", 5)
+          .attr("fill", "red");
+
+    var link_force =  d3.forceLink(links).id(function(d) { return d.name; })
+
+    var link = svg.append("g")
+        .attr("class", "links")
+        .selectAll(".link")
+        .data(links)
+        .enter().append("line")
+        .attr("stroke-width", 2)
+        .attr("stroke-opacity", 1)
+        .attr("stroke", "#000");
+
+    var text = svg.selectAll("text")
+                          .data(nodes)
+                          .enter()
+                          .append("text");
+
+    node.append("text")
+        .attr('x', function(d) {return d.x;})
+        .attr('y', function(d) {return d.y;})
+        .attr('dx', 12)
+        .attr('dy', 1)
+        .attr("font-size", "10px")
+        // .attr('class', 'id')
+        .text(function(d) {return d.name});
+
+
+    function tickActions() {
+      //update circle positions to reflect node updates on each tick of the simulation 
+      node
+          .attr("cx", function(d) { return d.x; })
+          .attr("cy", function(d) { return d.y; })
+      link
+          .attr("x1", function(d) { return d.source.x; })
+          .attr("y1", function(d) { return d.source.y; })
+          .attr("x2", function(d) { return d.target.x; })
+          .attr("y2", function(d) { return d.target.y; });
+    }
+
+    simulation.on("tick", tickActions );
+
+    simulation.force("links",link_force)
+  </script>
   <h3>Graduate Course Map</h3>
   <p>Generously provided by u/Devilnaht on <a href="https://www.reddit.com/r/berkeley/comments/bm0w8o/berkeley_math_dependency_chart/">Reddit</a></p>
   <p>Disclaimer: these only include official prerequisites. Different professors may vary the content semester to semester and thus have different requirements.</p>
