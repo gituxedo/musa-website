@@ -3,8 +3,7 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 
 # Images
-.jpg
-.jpeg
-.png
-.gif
-.bmp
+# .jpg
+# .png
+# .gif
+# .bmp
