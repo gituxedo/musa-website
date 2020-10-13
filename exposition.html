@@ -26,7 +26,7 @@
   <!-- Add your site or application content here -->
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://d3js.org/d3.v6.js"></script>
   <script src="https://unpkg.com/d3-dag@0.2.3/dist/d3-dag.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
@@ -85,7 +85,7 @@
   <!-- <p>Coming soon: hover over a course to see a brief description!</p> -->
   <!-- insert course map here -->
   <link rel="stylesheet" href="css/d3.css">
-  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="js/coursemap.js">
     const width = 960;
     const height = 500;
@@ -206,7 +206,7 @@
     simulation
         .force("charge_force", d3.forceManyBody())
         .force("center_force", d3.forceCenter(width / 2, height / 2));
-    //draw circles for the nodes 
+    //draw circles for the nodes
     var node = svg.append("g")
           .attr("class", "nodes")
           .selectAll(".node")
@@ -243,7 +243,7 @@
 
 
     function tickActions() {
-      //update circle positions to reflect node updates on each tick of the simulation 
+      //update circle positions to reflect node updates on each tick of the simulation
       node
           .attr("cx", function(d) { return d.x; })
           .attr("cy", function(d) { return d.y; })
