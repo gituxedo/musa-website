@@ -1,9 +1,9 @@
 const width = 1000;
-const height = 1000;
+const height = 750;
 
 const radius = 20;
 
-const svg = d3.select('body')
+const svg = d3.select('#coursemap')
   .append('svg')
   .attr('width', width)
   .attr('height', height);
@@ -307,7 +307,7 @@ const levels = ["lower-div",
 const type_colors = {"lower-div": "darkgray",
                      "analysis": "red",
                      "abstract algebra": "limegreen",
-                     "number theory": "yellow",
+                     "number theory": "gold",
                      "geometry": "orange",
                      "education": "orchid",
                      "applied": "turquoise",
@@ -339,24 +339,22 @@ var simulation = d3.forceSimulation()
 					.nodes(nodes_data);
 
 var link_force =  d3.forceLink(links_data)
-                        .id(function(d) { return d.id; })
-                        .distance(100)
-                        .strength(1);
+                        .id(function(d) { return d.id; });
 
 var charge_force = d3.forceManyBody()
                      .strength(-400);
 
-var center_force = d3.forceCenter(width / 2, height / 2);
+var center_force = d3.forceCenter(width / 2, height / 2).strength(0);
 
 var collision_force = d3.forceCollide(radius * 2);
 
 var force_x = d3.forceX().x(function(d) {
   let index = types.indexOf(d.type);
   let spacing = width / (types.length + 1);
-  return index * spacing;
+  return index * spacing + (spacing / 2);
 });
 
-force_x.strength(1.5);
+force_x.strength(4);
 
 // var force_y = d3.forceY().y(function(d) {
 //   let numPrereqs = getNumPrereqs(d.name);
@@ -366,11 +364,11 @@ force_x.strength(1.5);
 
 var force_y = d3.forceY().y(function(d) {
   let index = levels.indexOf(d.level);
-  let spacing = height / (levels.length + 1);
-  return index * spacing;
+  let spacing = height / (levels.length);
+  return index * spacing + (spacing / 2);
 });
 
-force_y.strength(2);
+force_y.strength(4);
 
 simulation
     .force("charge_force", charge_force)
@@ -415,7 +413,7 @@ svg.append("svg:defs").selectAll("marker")
   .enter().append("svg:marker")    // This section adds in the arrows
     .attr("id", String)
     .attr("viewBox", "0 -5 10 10")
-    .attr("refX", 15)
+    .attr("refX", 10)
     // .attr("refY", -1.5)
     .attr("markerWidth", 6)
     .attr("markerHeight", 6)
@@ -504,7 +502,7 @@ function mouseover(event, d) {
 
   // node.select("circle").style("opacity", "0.2");
   // node.select("text").style("opacity", "0.2");
-  //
+
   // d3.select(this).select("circle").style("opacity", "1.0");
   // d3.select(this).select("text").style("opacity", "1.0");
 
@@ -531,6 +529,10 @@ function mouseover(event, d) {
 function mouseout() {
   node.style("opacity", 1.0);
   link.style("opacity", 1.0);
+
+  d3.select(this).select("circle").transition()
+    .duration(750)
+    .attr("r", radius);
 }
 
 var node = svg.selectAll("g")
@@ -593,10 +595,6 @@ function drag_end(d) {
 }
 
 function tickActions() {
-    //update circle positions each tick of the simulation
-       // node
-       //  .attr("cx", function(d) { return d.x; })
-       //  .attr("cy", function(d) { return d.y; });
     node
      .attr("transform", function(d) {
          return "translate(" + d.x + "," + d.y + ")";
@@ -614,8 +612,8 @@ function tickActions() {
           let pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
 
           // x and y distances from center to outside edge of target node
-          let offsetX = (diffX * (radius / 2)) / pathLength;
-          let offsetY = (diffY * (radius / 2)) / pathLength;
+          let offsetX = (diffX * (radius)) / pathLength;
+          let offsetY = (diffY * (radius)) / pathLength;
 
           return d.target.x - offsetX;
         })
@@ -627,8 +625,8 @@ function tickActions() {
           let pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
 
           // x and y distances from center to outside edge of target node
-          let offsetX = (diffX * (radius / 2)) / pathLength;
-          let offsetY = (diffY * (radius / 2)) / pathLength;
+          let offsetX = (diffX * (radius)) / pathLength;
+          let offsetY = (diffY * (radius)) / pathLength;
 
           return d.target.y - offsetY;
         });
