@@ -183,6 +183,7 @@ const undergrad_links_data = [
   {"source": "104", "target": "170", "type": "musa"},
   {"source": "110", "target": "170", "type": "musa"},
   {"source": "54", "target": "172", "type": "musa"},
+  {"source": "55", "target": "172", "type": "department"},
   {"source": "113", "target": "172", "type": "musa"}
 ];
 

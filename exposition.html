@@ -67,9 +67,9 @@
   <!-- About Section -->
 <section id="exposition">
   <h1>Exposition and Course Help</h1>
-  <img src="img/academic.jpg" class="banner">
+  <img src="img/academic.jpg" style="display:block; margin-left:auto; margin-right:auto; width:300px">
   <h3>Course Notes</h3>
-  <p>MUSA maintains course notes for use by their undergrduates.
+  <p>MUSA maintains course notes for use by their undergraduates.
   The goal is to create easy-to-read summaries of core undergraduate courses, complete with examples
   and practice problems.</p>
   <p>If you'd like to see notes for a course you're taking or have taken, contact us at
@@ -78,18 +78,17 @@
 
   <li><a href="resources/math185.pdf">Math 185</a>: Complex Analysis</li>
 </ul>
-  <h3>Undergraduate Course Map</h3>
-  <p>Black arrows indicate the lower-division courses, and other colors are for upper-division courses. These include official prerequisites as well as recommended ones.</p>
-  <img src="course_map_info/coursemapv1.png" alt='Course Map' class='banner'>
-  <h3>Interactive Undergraduate Course Map</h3>
+  <h3>Interactive Course Map</h3>
   <!-- <p>Coming soon: hover over a course to see a brief description!</p> -->
-  <p>Hover over a course to highlight the prerequisites.</p>
-  <!-- insert course map here -->
+  <p>Hover over a course to highlight the prerequisites. Dashed lines indicate recommended prerequisites while solid lines indicate official prerequisites.<br>Designed and implemented by Andrew DeLapo.</p>
   <link rel="stylesheet" href="css/d3.css">
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <svg id="coursemap" width=1200 height=1000></svg>
+  <svg id="coursemap" width=1200 height=1000 alt="interactive SVG element"></svg>
   <script src="js/coursemap.js"></script>
   <button id="toggle-grads" onClick="toggleGradClasses();">Show Grad Classes</button>
+  <h3>Undergraduate Course Map</h3>
+  <p>Black arrows indicate the lower-division courses, and other colors are for upper-division courses. These include official prerequisites as well as recommended ones.<br>Made by Sylvia Jin.</p>
+  <img src="course_map_info/coursemapv1.png" alt='Static Undergraduate Course Map' class='banner'>
   <h3>Graduate Course Map</h3>
   <p>Generously provided by u/Devilnaht on <a href="https://www.reddit.com/r/berkeley/comments/bm0w8o/berkeley_math_dependency_chart/">Reddit</a></p>
   <p>Disclaimer: these only include official prerequisites. Different professors may vary the content semester to semester and thus have different requirements.</p>
