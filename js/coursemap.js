@@ -254,6 +254,7 @@ const grad_links_data = [
   {"source": "115", "target": "254A", "type": "musa"},
   {"source": "185", "target": "254A", "type": "musa"},
   {"source": "250A", "target": "254A", "type": "department"},
+  {"source": "250B", "target": "254A", "type": "musa"},
   {"source": "254A", "target": "254B", "type": "department"},
   {"source": "250B", "target": "255", "type": "department"},
   {"source": "143", "target": "256A", "type": "musa"},
